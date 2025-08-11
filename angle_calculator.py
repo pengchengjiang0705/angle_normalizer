@@ -76,11 +76,11 @@ def main():
             print(f"角度差异: [{', '.join(f'{d:.6f}' for d in diffs)}]")
             
             # 检查超过5°的值
-            over_limit_indices = [i for i, diff in enumerate(diffs) if diff > 5]
+            over_limit_indices = [i for i, diff in enumerate(diffs) if diff > 1]
             if over_limit_indices:
-                print("警告：以下位置角度差超过±5°:", ", ".join(map(str, over_limit_indices)))
+                print("警告：以下位置角度差超过±1°:", ", ".join(map(str, over_limit_indices)))
             else:
-                print("所有角度差均在±5°范围内")
+                print("所有角度差均在±1°范围内")
                 
         except Exception as e:
             print(f"输入错误: {e}")
